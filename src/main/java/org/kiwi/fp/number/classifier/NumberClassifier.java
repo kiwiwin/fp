@@ -26,7 +26,7 @@ public class NumberClassifier {
         return IntStream.range(1, num - 1).parallel().filter(isFactor(num)).reduce(0, (left, right) -> left + right);
     }
 
-    private static IntPredicate isFactor(int num) {
-        return n -> num % n == 0;
+    private static IntPredicate isFactor(int potentialFactor) {
+        return n -> potentialFactor % n == 0;
     }
 }
